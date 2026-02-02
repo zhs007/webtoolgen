@@ -17,3 +17,7 @@ Minimal example project for generating single-file browser tools.
 - Read input via `GET /files/data/<name>` and write output via `POST /upload/<name>`.
 - UI uses Tailwind CDN + FontAwesome.
 
+## Multi-Tool Structure
+- Each tool lives in `tools/<tool-name>/index.html`.
+- Tool logic lives in `src/tools/<tool-name>/main.ts`.
+- Build output becomes `dist/<tool-name>/index.html`.
