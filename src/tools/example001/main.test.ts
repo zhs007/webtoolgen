@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-describe("template", () => {
+describe("example001", () => {
   it("boots", () => {
     expect(true).toBe(true);
   });

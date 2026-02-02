@@ -19,5 +19,5 @@ Minimal example project for generating single-file browser tools.
 
 ## Multi-Tool Structure
 - Each tool lives in `tools/<tool-name>/index.html`.
-- Tool logic lives in `src/tools/<tool-name>/main.ts`.
+- Tool logic and tests live in `src/tools/<tool-name>/`.
 - Build output becomes `dist/<tool-name>/index.html`.
