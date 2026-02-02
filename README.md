@@ -133,3 +133,7 @@ function showStatus(el: HTMLElement, msg: string, type: "info" | "success" | "er
 - Each tool is a single HTML output that must be self-contained.
 - Use `tools/<tool-name>/index.html` + `src/tools/<tool-name>/main.ts` as the pattern.
 
+## Build details (single-file per tool)
+The build uses `vite-plugin-singlefile` and runs **one tool at a time** to avoid
+Rollup's multi-input limitation with `inlineDynamicImports`.
+Outputs are placed in `dist/<tool-name>/index.html`.
