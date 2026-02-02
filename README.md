@@ -127,6 +127,7 @@ function showStatus(el: HTMLElement, msg: string, type: "info" | "success" | "er
 - `pnpm build` - output single HTML per tool to `dist/`
 - `pnpm preview` - preview built HTML
 - `pnpm test` - run Vitest
+- `pnpm turbo` - run cached build/test/lint/typecheck via Turborepo
 
 ## Notes for agents
 - Runtime = browser sandbox only; do not use Node APIs in tool logic.

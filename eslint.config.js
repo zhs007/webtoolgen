@@ -5,6 +5,11 @@ export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ["dist/**"]
+    ignores: ["dist/**"],
+    languageOptions: {
+      globals: {
+        process: "readonly"
+      }
+    }
   }
 ];

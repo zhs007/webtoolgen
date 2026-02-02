@@ -1,10 +1,6 @@
-const btn = document.getElementById("btn-run") as HTMLButtonElement | null;
-const status = document.getElementById("status") as HTMLDivElement | null;
-const workspace = document.getElementById("workspace") as HTMLDivElement | null;
-
-if (!btn || !status || !workspace) {
-  throw new Error("Required DOM elements not found.");
-}
+const btn = mustGet<HTMLButtonElement>("btn-run");
+const statusEl = mustGet<HTMLDivElement>("status");
+const workspace = mustGet<HTMLDivElement>("workspace");
 
 function showStatus(message: string, type: "info" | "success" | "error" = "info") {
   const cls =
@@ -13,8 +9,8 @@ function showStatus(message: string, type: "info" | "success" | "error" = "info"
       : type === "success"
       ? "bg-green-50 text-green-700"
       : "bg-blue-50 text-blue-700";
-  status.className = `block p-4 rounded-lg ${cls}`;
-  status.innerHTML = message;
+  statusEl.className = `block p-4 rounded-lg ${cls}`;
+  statusEl.innerHTML = message;
 }
 
 async function runProcess() {
@@ -40,3 +36,13 @@ async function runProcess() {
 btn.addEventListener("click", () => {
   void runProcess();
 });
+
+function mustGet<T extends HTMLElement>(id: string): T {
+  const el = document.getElementById(id);
+  if (!el) {
+    throw new Error(`Required element missing: #${id}`);
+  }
+  return el as T;
+}
+
+export {};
